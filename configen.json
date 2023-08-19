@@ -1,0 +1,21 @@
+{
+    "configen": {
+        "version": "4",
+        "sources": [
+            {
+                "id": "cloud",
+                "path": "app",
+                "r": true
+            }
+        ],
+        "destinations": [
+            {
+                "id": "cloud",
+                "path": "gen/gen4main",
+                "sources": [
+                    "cloud"
+                ]
+            }
+        ]
+    }
+}
