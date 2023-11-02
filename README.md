@@ -1,2 +1,2 @@
-# passport-cloud
-passport - 云端
+# passport-sso
+passport - 单点登录服务

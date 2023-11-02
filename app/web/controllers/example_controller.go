@@ -3,7 +3,7 @@ package controllers
 import (
 	"strconv"
 
-	"github.com/bitwormhole/passport-cloud/app/web/vo"
+	"github.com/bitwormhole/passport-sso/app/web/vo"
 	"github.com/gin-gonic/gin"
 	"github.com/starter-go/libgin"
 )
@@ -26,9 +26,9 @@ func (inst *ExampleController) Registration() *libgin.ControllerRegistration {
 	return &libgin.ControllerRegistration{Route: inst.route}
 }
 
-func (inst *ExampleController) route(g *gin.RouterGroup) error {
+func (inst *ExampleController) route(g libgin.RouterProxy) error {
 
-	g = g.Group("example")
+	g = g.For("example")
 
 	g.POST("", inst.handleInsert)
 	g.DELETE(":id", inst.handleRemove)

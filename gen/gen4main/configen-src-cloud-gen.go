@@ -1,23 +1,23 @@
 package gen4main
 import (
-    p622100d4e "github.com/bitwormhole/passport-cloud/app/web/controllers"
+    p4b9cc3086 "github.com/bitwormhole/passport-sso/app/web/controllers"
     pd1a916a20 "github.com/starter-go/libgin"
      "github.com/starter-go/application"
 )
 
-// type p622100d4e.ExampleController in package:github.com/bitwormhole/passport-cloud/app/web/controllers
+// type p4b9cc3086.ExampleController in package:github.com/bitwormhole/passport-sso/app/web/controllers
 //
-// id:com-622100d4e8ce5e8b-controllers-ExampleController
+// id:com-4b9cc308688ef382-controllers-ExampleController
 // class:class-d1a916a203352fd5d33eabc36896b42e-Controller
 // alias:
 // scope:singleton
 //
-type p622100d4e8_controllers_ExampleController struct {
+type p4b9cc30868_controllers_ExampleController struct {
 }
 
-func (inst* p622100d4e8_controllers_ExampleController) register(cr application.ComponentRegistry) error {
+func (inst* p4b9cc30868_controllers_ExampleController) register(cr application.ComponentRegistry) error {
 	r := cr.NewRegistration()
-	r.ID = "com-622100d4e8ce5e8b-controllers-ExampleController"
+	r.ID = "com-4b9cc308688ef382-controllers-ExampleController"
 	r.Classes = "class-d1a916a203352fd5d33eabc36896b42e-Controller"
 	r.Aliases = ""
 	r.Scope = "singleton"
@@ -26,13 +26,13 @@ func (inst* p622100d4e8_controllers_ExampleController) register(cr application.C
 	return r.Commit()
 }
 
-func (inst* p622100d4e8_controllers_ExampleController) new() any {
-    return &p622100d4e.ExampleController{}
+func (inst* p4b9cc30868_controllers_ExampleController) new() any {
+    return &p4b9cc3086.ExampleController{}
 }
 
-func (inst* p622100d4e8_controllers_ExampleController) inject(injext application.InjectionExt, instance any) error {
+func (inst* p4b9cc30868_controllers_ExampleController) inject(injext application.InjectionExt, instance any) error {
 	ie := injext
-	com := instance.(*p622100d4e.ExampleController)
+	com := instance.(*p4b9cc3086.ExampleController)
 	nop(ie, com)
 
 	
@@ -43,7 +43,7 @@ func (inst* p622100d4e8_controllers_ExampleController) inject(injext application
 }
 
 
-func (inst*p622100d4e8_controllers_ExampleController) getResponder(ie application.InjectionExt)pd1a916a20.Responder{
+func (inst*p4b9cc30868_controllers_ExampleController) getResponder(ie application.InjectionExt)pd1a916a20.Responder{
     return ie.GetComponent("#alias-d1a916a203352fd5d33eabc36896b42e-Responder").(pd1a916a20.Responder)
 }
 

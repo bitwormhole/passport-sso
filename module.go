@@ -1,18 +1,18 @@
-package main
+package passportsso
 
 import (
 	"embed"
-	"os"
 
-	"github.com/bitwormhole/passport-cloud/gen/gen4main"
+	"github.com/bitwormhole/passport-sso/gen/gen4main"
 	"github.com/starter-go/application"
-	"github.com/starter-go/libgin/modulegin"
-	"github.com/starter-go/libgorm/modgorm"
+	"github.com/starter-go/libgin/modules/libgin"
+	"github.com/starter-go/libgorm/modules/libgorm"
+	"github.com/starter-go/security-gin-gorm/modules/securitygingorm"
 	"github.com/starter-go/starter"
 )
 
 const (
-	theModuleName     = "github.com/bitwormhole/passport-cloud"
+	theModuleName     = "github.com/bitwormhole/passport-sso"
 	theModuleVersion  = "v0.0.0"
 	theModuleRevision = 0
 	theModuleResPath  = "src/main/resources"
@@ -21,7 +21,7 @@ const (
 //go:embed "src/main/resources"
 var theModuleResFS embed.FS
 
-func module() application.Module {
+func Module() application.Module {
 	mb := &application.ModuleBuilder{}
 	mb.Name(theModuleName)
 	mb.Version(theModuleVersion)
@@ -30,14 +30,9 @@ func module() application.Module {
 	mb.Components(gen4main.ExportComForPassportCloudMain)
 
 	mb.Depend(starter.Module())
-	mb.Depend(modulegin.Module())
-	mb.Depend(modgorm.Module())
+	mb.Depend(libgin.Module())
+	mb.Depend(libgorm.Module())
+	mb.Depend(securitygingorm.Module())
 
 	return mb.Create()
-}
-
-func main() {
-	i := starter.Init(os.Args)
-	i.MainModule(module())
-	i.WithPanic(true).Run()
 }
